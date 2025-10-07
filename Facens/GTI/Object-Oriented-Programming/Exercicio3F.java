@@ -1,4 +1,5 @@
 public class Exercicio3F {
+    
     public static int contarCaracter(String texto, char caractere) {
         int contagem = 0;
 
