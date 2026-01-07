@@ -1,0 +1,1 @@
+TypeORM (Object Relational Mapper): é o que permite os desenvolvedores integrarem com o banco de dados usando o código TS ou JS. Basicamente ele é o tradutor entre o banco de dados e o backend.
