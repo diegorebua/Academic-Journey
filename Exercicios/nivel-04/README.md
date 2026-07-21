@@ -1,20 +1,18 @@
-# Nível 4: Intermediário (Banco de Dados, SQL e ORM)
+# Nível 4: Intermediário (Joins Básicos)
 
-Neste nível você conectará sua aplicação a um Banco de Dados Relacional (PostgreSQL) usando SQL puro e ORMs (TypeORM/Prisma).
-
----
-
-### Exercício 4.1: Modelagem e Queries SQL Puras
-**Objetivo:** Escrever scripts SQL para:
-1. Criar as tabelas `usuarios` (`id`, `nome`, `email`, `criado_em`) e `pedidos` (`id`, `usuario_id`, `valor_total`, `status`, `criado_em`) com chave estrangeira.
-2. Escrever uma consulta SQL com `JOIN` que traga todos os usuários e o valor total gasto por cada um em pedidos com status `'CONCLUIDO'`.
+Neste nível você começará a cruzar dados de diferentes tabelas relacionais usando o `INNER JOIN`.
 
 ---
 
-### Exercício 4.2: Integração com ORM (TypeORM ou Prisma)
-**Objetivo:** Configurar o ORM para conectar ao PostgreSQL e definir as entidades `User` e `Post` (relacionamento 1 para N). Criar um Service que salve um novo post vinculado a um usuário existente.
+### Exercício 4.1: INNER JOIN Básico
+**Objetivo:** Escreva uma consulta que retorne o `nome` do funcionário e o `nome` do departamento em que ele trabalha, cruzando a tabela `funcionarios` com a tabela `departamentos` através da chave `departamento_id`.
 
 ---
 
-### Exercício 4.3: Paginação e Filtros de Consulta
-**Objetivo:** Implementar no endpoint `GET /usuarios` suporte a query params para paginação (`page`, `limit`) e busca por nome (`search`), garantindo que a consulta no banco use `LIMIT`, `OFFSET` e `LIKE`/`ILIKE` eficientemente.
+### Exercício 4.2: INNER JOIN com Filtro WHERE
+**Objetivo:** Modifique a consulta anterior para retornar apenas os funcionários que trabalham no departamento de nome 'TI' ou 'Engenharia'.
+
+---
+
+### Exercício 4.3: Múltiplos Joins
+**Objetivo:** Escreva uma consulta para retornar o número do `pedido`, o `nome` do cliente e o `nome` do produto, unindo as tabelas `pedidos`, `clientes` e `produtos` (assuma a existência de uma tabela associativa `itens_pedido`).

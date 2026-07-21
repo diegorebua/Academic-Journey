@@ -1,18 +1,18 @@
-# Nível 2: Iniciante+ (Assincronismo, Promises e Async/Await)
+# Nível 2: Iniciante+ (Funções de Agregação)
 
-Neste nível você lidará com operações assíncronas, consumo de APIs externas e tratamento rigoroso de exceções com `try/catch`.
-
----
-
-### Exercício 2.1: Simulação de Busca com Delay
-**Objetivo:** Crie uma função `buscarUsuarioPorId(id)` que retorne uma `Promise`. Se o `id` for maior que 0, resolva a promise após 1 segundo com `{ id, nome: "Usuário " + id }`. Se o `id <= 0`, rejeite a promise com a mensagem `"ID inválido"`.
+Neste nível você aprenderá a resumir dados utilizando funções matemáticas fundamentais.
 
 ---
 
-### Exercício 2.2: Consumo de API Externa
-**Objetivo:** Escreva uma função assíncrona `buscarCEP(cep)` usando `fetch` ou `axios` para consultar a API `https://viacep.com.br/ws/{cep}/json/`. Retorne apenas as propriedades `{ logradouro, bairro, localidade, uf }`.
+### Exercício 2.1: Contagem de Registros
+**Objetivo:** Retorne o número total de clientes cadastrados na tabela `clientes`. (Use a função `COUNT`).
 
 ---
 
-### Exercício 2.3: Execução Paralela com Promise.all
-**Objetivo:** Crie a função `carregarDashboard(usuarioId)` que faça 3 chamadas assíncronas simultâneas (Perfil, Notificações e Compras) em paralelo usando `Promise.all` e retorne um objeto unificado com os 3 resultados.
+### Exercício 2.2: Soma e Média
+**Objetivo:** Retorne a soma total e a média dos salários de todos os funcionários na tabela `funcionarios`. Nomeie as colunas como `Total_Salarios` e `Media_Salarial`.
+
+---
+
+### Exercício 2.3: Valores Máximo e Mínimo
+**Objetivo:** Encontre o preço do produto mais caro e do produto mais barato na tabela `produtos`. Nomeie as colunas adequadamente.

@@ -1,23 +1,18 @@
-# Nível 3: Intermediário Inicial (Servidor HTTP e CRUD em Memória)
+# Nível 3: Intermediário Inicial (Agrupamento - GROUP BY e HAVING)
 
-Neste nível você construirá sua primeira API RESTful utilizando Express.js ou Fastify com rotas CRUD mantendo o estado em memória.
-
----
-
-### Exercício 3.1: Endpoint de Status (Healthcheck)
-**Objetivo:** Criar um servidor Express com a rota `GET /healthcheck` que responda com o status `200 OK`, horário atual do servidor (`uptime` e `timestamp`) e versão da aplicação.
+Neste nível você agrupará dados em blocos para extrair estatísticas avançadas e aplicará filtros sobre os resultados agregados.
 
 ---
 
-### Exercício 3.2: CRUD Completo de Produtos (Em Memória)
-**Objetivo:** Criar uma API REST contendo as seguintes rotas para a entidade `Produto` (`id`, `nome`, `preco`, `estoque`):
-- `GET /produtos` - Lista todos os produtos.
-- `GET /produtos/:id` - Retorna um produto específico (ou 404 se não existir).
-- `POST /produtos` - Cria um novo produto (gerando ID único).
-- `PUT /produtos/:id` - Atualiza um produto existente.
-- `DELETE /produtos/:id` - Remove um produto.
+### Exercício 3.1: Agrupamento Simples
+**Objetivo:** Retorne a quantidade total de funcionários agrupados por `departamento_id` na tabela `funcionarios`.
 
 ---
 
-### Exercício 3.3: Middleware de Validação
-**Objetivo:** Criar um middleware Express `validarProdutoBody` que garanta que no `POST /produtos` os campos `nome` (string não vazia) e `preco` (número positivo) estejam presentes no `req.body`. Caso contrário, retorne status `400 Bad Request` com mensagem detalhada do erro.
+### Exercício 3.2: Média por Categoria
+**Objetivo:** Retorne a `categoria` e o preço médio dos produtos para cada categoria na tabela `produtos`.
+
+---
+
+### Exercício 3.3: Filtro Pós-Agrupamento (HAVING)
+**Objetivo:** Modifique a consulta anterior (Exercício 3.2) para retornar apenas as categorias que possuam um preço médio estritamente maior que 500.

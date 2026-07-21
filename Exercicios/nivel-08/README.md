@@ -1,22 +1,21 @@
-# Nível 8: Especialista Inicial (Conteinerização com Docker e Docker Compose)
+# Nível 8: Especialista Inicial (CTEs - Expressões de Tabela Comuns)
 
-Neste nível você empacotará toda a sua aplicação web e infraestrutura de banco de dados em containers isolados e reproduzíveis.
-
----
-
-### Exercício 8.1: Dockerfile Otimizado (Multi-stage Build)
-**Objetivo:** Criar um `Dockerfile` para uma aplicação Node.js utilizando *multi-stage build* (estágio de `builder` para compilar TypeScript/dependências de dev e estágio final ultra-leve com `node:alpine` prod-only).
+Neste nível focaremos na cláusula `WITH` para modularizar e organizar queries gigantescas, além das famosas CTEs Recursivas.
 
 ---
 
-### Exercício 8.2: Docker Compose Multi-serviços
-**Objetivo:** Criar um arquivo `docker-compose.yml` que orquestre:
-1. `api`: Container da sua aplicação Node.js.
-2. `database`: Container PostgreSQL com volume persistente para manter dados salvos no host.
-3. `redis`: Container Redis para cache.
-- Garantir que a API só inicie após o PostgreSQL estar pronto (Healthcheck / `depends_on`).
+### Exercício 8.1: CTE Básica
+**Objetivo:** Crie uma CTE chamada `VendasMensais` que calcule a soma das vendas por mês. Em seguida, na consulta principal, selecione apenas os meses cuja venda total ultrapassou 100.000.
 
 ---
 
-### Exercício 8.3: Scripts de Migração Automática na Inicialização
-**Objetivo:** Configurar um script de entrada (`entrypoint.sh`) no container que execute automaticamente as migrações do banco de dados (ex: `npx typeorm migration:run` ou `npx prisma migrate deploy`) antes de iniciar o servidor da API.
+### Exercício 8.2: Múltiplas CTEs Encadeadas
+**Objetivo:** Crie duas CTEs:
+1. `ClientesVips`: Filtra os IDs dos clientes que gastaram mais de 5.000 no último ano.
+2. `ProdutosTop`: Filtra os IDs dos 3 produtos mais vendidos no geral.
+Na query principal, descubra quais "Clientes VIPs" compraram "Produtos Top".
+
+---
+
+### Exercício 8.3: CTE Recursiva (Hierarquias)
+**Objetivo:** Em uma tabela de `funcionarios` (`id`, `nome`, `gestor_id`), escreva uma CTE Recursiva (`WITH RECURSIVE`) para listar toda a cadeia hierárquica (organograma) abaixo de um Diretor específico (ex: `gestor_id IS NULL` ou `id = 1`).
